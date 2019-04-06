@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TextInputLayout</string>
+    <string name="txt_name">Enter Name</string>
+    <string name="txt_surname">Enter Surname</string>
+    <string name="txt_age">Enter Age</string>
+    <string name="txt_another">Enter Another</string>
+    <string name="txt_submit">Submit</string>
+
+</resources>

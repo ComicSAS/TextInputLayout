@@ -13,12 +13,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/max_counter_20"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/colorPurple"
+            android:hint="@string/txt_name"
+            app:helperTextEnabled="true"
+            app:helperText="@string/txt_required"
             android:id="@+id/tilMainName">
         <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/etMainName"
-                android:hint="@string/txt_name"
+                android:maxLength="@integer/max_txt_length_20"
+                android:inputType="textCapWords|textPersonName"
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -28,12 +40,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilMainName"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/max_counter_20"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/colorPurple"
+            android:hint="@string/txt_surname"
+            app:helperTextEnabled="true"
+            app:helperText="@string/txt_required"
             android:id="@+id/tilMainSurname">
         <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/etMainSurname"
-                android:hint="@string/txt_surname"/>
+                android:maxLength="@integer/max_txt_length_20"
+                android:inputType="textCapWords|textPersonName"
+        />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -41,27 +66,46 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/colorPurple"
+            android:hint="@string/txt_age"
             app:layout_constraintTop_toBottomOf="@id/tilMainSurname"
             android:id="@+id/tilMainAge">
         <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/etMainAge"
-                android:hint="@string/txt_age"
+                android:maxLength="@integer/max_txt_length_2"
+                android:inputType="number"
         />
     </android.support.design.widget.TextInputLayout>
+
     <android.support.design.widget.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilMainAge"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/max_counter_100"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/colorPurple"
+            android:hint="@string/txt_another"
             android:id="@+id/tilMainAnother">
         <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/etMainAnother"
-                android:hint="@string/txt_another"
+                android:maxLength="@integer/max_txt_length_100"
+                android:scrollbars="vertical"
         />
     </android.support.design.widget.TextInputLayout>
     <Button android:layout_width="0dp"

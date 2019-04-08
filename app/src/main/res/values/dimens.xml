@@ -1,0 +1,8 @@
+<resources>
+    <integer name="max_txt_length_2">2</integer>
+    <integer name="max_txt_length_20">20</integer>
+    <integer name="max_txt_length_100">100</integer>
+    <integer name="max_counter_20">20</integer>
+    <integer name="max_counter_100">100</integer>
+
+</resources>

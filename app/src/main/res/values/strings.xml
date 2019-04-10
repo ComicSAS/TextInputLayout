@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">TextInputLayout</string>
-    <string name="txt_name">Enter Name*</string>
-    <string name="txt_surname">Enter Surname*</string>
-    <string name="txt_age">Enter Age</string>
-    <string name="txt_another">Enter Another</string>
-    <string name="txt_submit">Submit</string>
+    <string name="txt_enter_name">Enter Name</string>
+    <string name="txt_enter_surname">Enter Surname</string>
+    <string name="txt_enter_age">Enter Age</string>
+    <string name="txt_enter_another">Enter Another</string>
+    <string name="txt_btn_submit">Submit</string>
     <string name="txt_counter_over_flow">Stop</string>
-    <string name="txt_required">*Required</string>
+    <string name="txt_ht_required">*Required</string>
 </resources>

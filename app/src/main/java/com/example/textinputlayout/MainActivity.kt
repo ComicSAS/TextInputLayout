@@ -117,7 +117,6 @@ class MainActivity : AppCompatActivity() {
         etMainAnother.setOnClickListener(onAnotherAction)
     }
 
-
     private fun isValid(str: String): Boolean {
         return str.length > 2
     }

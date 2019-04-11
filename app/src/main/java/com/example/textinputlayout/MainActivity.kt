@@ -16,35 +16,34 @@ class MainActivity : AppCompatActivity() {
     private lateinit var onAgeAction: View.OnClickListener
     private lateinit var onAnotherAction: View.OnClickListener
 
-    var user = User("Andrew", "Sukhovolskij")
+    private lateinit var user: User
+    private lateinit var userName: String
+    private lateinit var userSurname: String
+    private lateinit var userAnother: String
+    var userAge: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        etMainName.setText(user.name)
-        etMainSurname.setText(user.surname)
-        etMainAge.setText(user.age.toString())
-        etMainAnother.setText(user.another)
-
+        initUser()
+        initViews()
         initListeners()
         bindListeners()
     }
 
-    private fun isValid(str: String): Boolean {
-        return str.length > 2
+    private fun initViews() {
+        etMainName.setText(user.name)
+        etMainSurname.setText(user.surname)
+        etMainAge.setText(user.age.toString())
+        etMainAnother.setText(user.another)
     }
 
-    private fun isAllViewWithContent(str1: String, str2: String): Boolean {
-        return isValid(str1) && isValid(str2)
-    }
-
-    private fun isETValid(et: TextInputEditText): Boolean {
-        return et.length() > 2
-    }
-
-    private fun isAllETsValid(et1: TextInputEditText, et2: TextInputEditText): Boolean {
-        return isETValid(et1) && isETValid(et2)
+    private fun initUser() {
+        user = User("Andrew", "Sukhovolskij")
+        userName = user.name
+        userSurname = user.surname
+        userAge = user.age.toString().toInt()
+        userAnother = user.another.toString()
     }
 
     private fun initListeners() {
@@ -85,16 +84,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         onSubmitAction = View.OnClickListener {
-            val name = etMainName.text.toString()
-            val surname = etMainSurname.text.toString()
-            val age = etMainAge.text.toString().toInt()
-            val another = etMainAnother.text.toString()
+            userName = etMainName.text.toString()
+            userSurname = etMainSurname.text.toString()
+            userAge = etMainAge.text.toString().toInt()
+            userAnother = etMainAnother.text.toString()
 
-            if (isAllViewWithContent(name, surname)) {
-                user.name = name
-                user.surname = surname
-                user.age = age
-                user.another = another
+            if (isAllViewWithContent(userName, userSurname)) {
+                user.name = userName
+                user.surname = userSurname
+                user.age = userAge
+                user.another = userAnother
                 makeToast(
                     """onSubmitAction:
                     |User Name = ${user.name}
@@ -116,6 +115,23 @@ class MainActivity : AppCompatActivity() {
         etMainSurname.setOnClickListener(onSurnameAction)
         etMainAge.setOnClickListener(onAgeAction)
         etMainAnother.setOnClickListener(onAnotherAction)
+    }
+
+
+    private fun isValid(str: String): Boolean {
+        return str.length > 2
+    }
+
+    private fun isAllViewWithContent(str1: String, str2: String): Boolean {
+        return isValid(str1) && isValid(str2)
+    }
+
+    private fun isETValid(et: TextInputEditText): Boolean {
+        return et.length() > 2
+    }
+
+    private fun isAllETsValid(et1: TextInputEditText, et2: TextInputEditText): Boolean {
+        return isETValid(et1) && isETValid(et2)
     }
 
     private fun makeToast(msg: String) {

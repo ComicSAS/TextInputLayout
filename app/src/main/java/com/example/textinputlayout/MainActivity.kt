@@ -3,7 +3,6 @@ package com.example.textinputlayout
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TextInputEditText
-import android.text.Editable
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,20 +24,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initUser()
-        initViews()
-        initListeners()
-        bindListeners()
+        initMainActivity()
     }
 
-    private fun initViews() {
+    private fun initMainActivity() {
+        initMainUser()
+        initMainViews()
+        initMainListeners()
+        bindMainListeners()
+    }
+
+    private fun initMainViews() {
         etMainName.setText(user.name)
         etMainSurname.setText(user.surname)
         etMainAge.setText(user.age.toString())
         etMainAnother.setText(user.another)
     }
 
-    private fun initUser() {
+    private fun initMainUser() {
         user = User("Andrew", "Sukhovolskij")
         userName = user.name
         userSurname = user.surname
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         userAnother = user.another.toString()
     }
 
-    private fun initListeners() {
+    private fun initMainListeners() {
         onNameAction = View.OnClickListener {
             if (isAllETsValid(etMainName, etMainSurname))
                 btnMainSubmit.setEnabled(true)
@@ -109,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun bindListeners() {
+    private fun bindMainListeners() {
         btnMainSubmit.setOnClickListener(onSubmitAction)
         etMainName.setOnClickListener(onNameAction)
         etMainSurname.setOnClickListener(onSurnameAction)
